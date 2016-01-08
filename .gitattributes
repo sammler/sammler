@@ -1,0 +1,2 @@
+# need to keep LFs in shell scripts
+*.sh binary

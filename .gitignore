@@ -1,0 +1,8 @@
+.idea/
+.vscode/
+node_modules/
+npm-debug.log
+coverage/
+test/**/.content/
+docs/recipes/.content/
+todo.md

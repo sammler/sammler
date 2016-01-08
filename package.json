@@ -1,0 +1,18 @@
+{
+  "name": "sammler",
+  "version": "0.1.0",
+  "description": "A collection of libraries to fetch content from several services.",
+  "scripts": {
+    "test": "mocha test --recursive --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stefanwalther/sammler.git"
+  },
+  "author": "Stefan Walther",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanwalther/sammler/issues"
+  },
+  "homepage": "https://github.com/stefanwalther/sammler#readme"
+}
