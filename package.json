@@ -2,19 +2,19 @@
   "name": "sammler",
   "version": "0.2.0",
   "description": "It's fine to be a data junky.",
-  "scripts": {
-    "test": "mocha test --recursive --compilers js:babel-register"
+  "homepage": "https://github.com/sammler/sammler#readme",
+  "bugs": {
+    "url": "https://github.com/sammler/sammler/issues"
   },
+  "license": "MIT",
+  "author": "Stefan Walther",
   "repository": {
     "type": "git",
     "url": "git@github.com:stefanwalther/sammler.git"
   },
-  "author": "Stefan Walther",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sammler/sammler/issues"
+  "scripts": {
+    "test": "mocha test --recursive --compilers js:babel-register"
   },
-  "homepage": "https://github.com/sammler/sammler#readme",
   "devDependencies": {
     "eslint": "^3.8.1",
     "eslint-plugin-markdown": "^1.0.0-beta.2"
