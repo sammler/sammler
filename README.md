@@ -27,6 +27,14 @@ There is also another reason for _sammler_. As I am constantly testing new archi
 - The entire solution needs to multi-tenant enabled.
 - Embrace the concept of microservices.
 
+## Technology Choices
+<!-- Technology Choices -->
+I have made some assumptions and technology choices. This is fine for now, but over time this might change:
+
+- Programming languages: JavaScript/TypeScript, GoLang
+- UI framework: AngularJS 2.0
+- Containerization: Docker
+
 ## Contributing
 Primarily I do - especially at the beginning and in the next months - not expect any participation.
 I might pretty slowly progress on this project, as this is just a private project, only working on it in my free time.
