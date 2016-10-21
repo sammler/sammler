@@ -1,7 +1,7 @@
 {
   "name": "sammler",
   "version": "0.2.0",
-  "description": "A collection of libraries to fetch content from several services.",
+  "description": "It's fine to be a data junky.",
   "scripts": {
     "test": "mocha test --recursive --compilers js:babel-register"
   },
@@ -12,7 +12,11 @@
   "author": "Stefan Walther",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stefanwalther/sammler/issues"
+    "url": "https://github.com/sammler/sammler/issues"
   },
-  "homepage": "https://github.com/stefanwalther/sammler#readme"
+  "homepage": "https://github.com/sammler/sammler#readme",
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-plugin-markdown": "^1.0.0-beta.2"
+  }
 }
