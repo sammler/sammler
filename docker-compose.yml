@@ -1,7 +1,7 @@
 version: '2'
 services:
 
-  sammler-consul:
+  s5r-consul:
     container_name: 's5r-consul'
     image: progrium/consul:latest
     command: -server -bootstrap -ui-dir /ui
@@ -19,9 +19,22 @@ services:
     dns:
       - 127.0.0.1
 
-  sammler-rabbitmq:
+  s5r-rabbitmq:
     container_name: 's5r-rabbitmq'
     image: rabbitmq:3.6.6-management
     ports:
       - "8080:15672"
       - "5672:5672"
+
+  s5r-scheduler:
+    container_name: 's5r-scheduler'
+    image: stefanwalther/sammler-scheduler:master
+    environment:
+      - SAMMLER_RABBITMQ-URL=amqp://guest:guest@sr5-rabbitmq:5672
+    links:
+      - s5r-rabbitmq
+
+
+  # Middleware
+  #s5r-middleware-github:
+  #  container_name: 's5r-middleware-github'

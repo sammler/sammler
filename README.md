@@ -5,6 +5,9 @@
 - [MVP](#mvp)
 - [Principles](#principles)
 - [Technology Choices](#technology-choices)
+- [FAQ](#faq)
+- [What does sammler mean?](#what-does-sammler-mean)
+- [How is the name written?](#how-is-the-name-written)
 - [Contributing](#contributing)
 - [Author](#author)
 - [License](#license)
@@ -57,6 +60,15 @@ From the beginning I have made some assumptions and technology choices. This is 
 - Containerization: Docker
 
 All other decisions will be documented over time.
+
+## FAQ
+## What does sammler mean?
+
+_Sammler_ is the german word for collector, gatherer, assembler or collecting agent.
+
+## How is the name written?
+
+_sammler_, not Sammler. 
 
 ## Contributing
 Primarily I do - especially at the beginning and in the next months - not expect any participation.
