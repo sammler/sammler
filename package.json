@@ -6,20 +6,21 @@
   "bugs": {
     "url": "https://github.com/sammler/sammler/issues"
   },
+  "keywords": [
+    "microservices",
+    "github"
+  ],
   "license": "MIT",
   "author": "Stefan Walther",
   "repository": {
     "type": "git",
-    "url": "git@github.com:stefanwalther/sammler.git"
+    "url": "git@github.com:sammler/sammler.git"
   },
   "scripts": {
     "docs": "verb",
     "test": "mocha test --recursive --compilers js:babel-register"
   },
-  "devDependencies": {
-    "eslint": "^3.8.1",
-    "eslint-plugin-markdown": "^1.0.0-beta.2"
-  },
+  "devDependencies": {},
   "verb": {
     "run": true,
     "toc": {
