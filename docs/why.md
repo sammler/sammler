@@ -9,9 +9,11 @@ So I need a solution to constantly collect and analyze all the data.
 
 The ultimate goal would be:
 
-- Analyze activities in the three different areas
+- Analyze activities in the three different areas (business life, social activities, IoT)
+- Create a pluggable system, so that it can be easily extended (by myself and certainly others)
 - Be able to have access and analyze the full history in all areas
 
 **But, wait ...**
-There is also another reason for _sammler_. As I am constantly testing new architectural and technical approaches, I just need a playground to test and validate technologies.
-
+There is also another reason for _sammler_:
+As I am constantly testing new architectural and technical approaches, I just need a playground to test and validate technologies.
+The entire setup of _sammler_ is also my reference implementation of a microservices based architecture, using some of the cutting edge solutions out there.
