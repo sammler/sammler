@@ -8,7 +8,9 @@
   },
   "keywords": [
     "microservices",
-    "github"
+    "github",
+    "twitter",
+    "linkedin"
   ],
   "license": "MIT",
   "author": "Stefan Walther",
@@ -17,8 +19,7 @@
     "url": "git@github.com:sammler/sammler.git"
   },
   "scripts": {
-    "docs": "verb",
-    "test": "mocha test --recursive --compilers js:babel-register"
+    "docs": "verb"
   },
   "devDependencies": {},
   "verb": {

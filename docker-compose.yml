@@ -1,7 +1,8 @@
 version: '2'
 services:
-  # Load Balancing
-  consul:
+
+  sammler-consul:
+    container_name: 's5r-consul'
     image: progrium/consul:latest
     command: -server -bootstrap -ui-dir /ui
     restart: always
@@ -18,22 +19,9 @@ services:
     dns:
       - 127.0.0.1
 
-  nginx-lb:
-    build: docker/nginx/
-    mem_limit: 128m
+  sammler-rabbitmq:
+    container_name: 's5r-rabbitmq'
+    image: rabbitmq:3.6.6-management
     ports:
-      - 8000:8000
-      - 8443:8443
-      - 8001:8001
-    expose:
-      - 8000
-      - 8443
-      - 8001
-    links:
-      - consul:consul
-    restart: always
-    command: >
-        /bin/containerpilot
-        -config file:///etc/containerpilot/containerpilot.json
-        nginx -g "daemon off;"
-
+      - "8080:15672"
+      - "5672:5672"

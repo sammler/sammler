@@ -53,6 +53,6 @@ Some implementation details so far:
 ## Isn't that all overkill?
 
 Yes, it is ;-)  
-The MVP can probably achived just with a few lines of code, collecting some data from GitHub and comparing it with some stored data. But that's not the point.  
+The MVP can probably achieved just with a few lines of code, collecting some data from GitHub and comparing it with some stored data. But that's not the point.  
 Instead I am trying to build an infrastructure and code-base with the MVP, which can then be used to extend the service and to easily add other services on top of the infastructure.  
 Beside that - and that's another goal of this project - I am constantly learning new technologies and want to understand in detail what the real challenges are when creating a microservices based solution and operating it on a daily basis.
