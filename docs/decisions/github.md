@@ -7,24 +7,39 @@
 - My profile
     - Who are my stargazers?
     - Who started/removed starring over time?
-- Which repos do I own?
+- Which (public) repos do I own?
 - Stargazers of repos
     - Who are the stargazers of my repos?
     - Who started/removed starring over time?
 
-## Profile (`github_profile`)
+## Profile (`profile`)
 - Every successful collector task updates each record with `modified_at = now()`
 - Current amount of stargazers and favorites are stored in the profile
 
-### Profile - Stargazers (`github_profile_stargazers`)
+- `profile_id` - 
+- `github_id` - 
+- `followers` - 
+- `following` - 
+- `public_repos` - Total **current** amount of public repos
+- `public_gists` - Total **current** amount of public gists
+- `created_at` - Creation date of the profile on GitHub.
+- `modified_at` - Date the profile was last updated on GitHub.
+- `confirmed_at` - 
+
+## Profile History (`profile_history`)
+
+
+## Users (`users`)
+General purpose table to store GitHub users, to use the across domains and potentially also tenants.
+The table is more supposed to be a cache, then something alse
+
+### Profile - Stargazers (`profile_stargazers`)
 Store details who is stargazing the profile
 
-- `profile_id`
-- `stargazer_id`
-- `date_created`
-- `date_modified` - For each time the stargazing can be confirmed, `date_modified` is updated ...
-
-    
+- `profile_id` - Id of the profile, see table `profile`
+- `stargazer_id` - Id of the user, see table `users`
+- `created_at` - Should ideally be taken from the date when the user starte starring the profile.
+- `modified_at` - For each time the stargazing can be confirmed, `modified_at` is updated ...
     
 ## Repos
 

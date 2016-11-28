@@ -30,11 +30,34 @@ services:
     container_name: 's5r-scheduler'
     image: stefanwalther/sammler-scheduler:master
     environment:
-      - SAMMLER_RABBITMQ-URL=amqp://guest:guest@sr5-rabbitmq:5672
+      - SAMMLER_RABBITMQ_URL=amqp://guest:guest@s5r-rabbitmq:5672
     links:
       - s5r-rabbitmq
 
+  # Middleware GitHub
+  s5r-middleware-github-db:
+    container_name: 's5r-middleware-github-db'
+    image: postgres:9.6
+    ports:
+      - 5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PWD=postgres
+      - POSTGRES_DB=sammler-github
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
-  # Middleware
-  #s5r-middleware-github:
-  #  container_name: 's5r-middleware-github'
+  s5r-middleware-github:
+    container_name: 's5r-middleware-github'
+    image: stefanwalther/sammler-middleware-github:latest
+    environment:
+      - SAMMLER_MIDDLEWARE_GITHUB_PORT=3001
+    links:
+      - s5r-middleware-github-db
+      - s5r-rabbitmq
+
+  # Middleware LinkedIn
+
+
+volumes:
+  postgres_data:
