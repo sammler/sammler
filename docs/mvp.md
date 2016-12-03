@@ -17,11 +17,13 @@ The following information should be fetched on a daily basis from GitHub
 - GitHub profile
 	- Who and how many followers do I have on my GitHub profile?
 	- How did this changed compared to the previous day:
+	  - Increase/decrease of followers  (e.g. compared to yesterday/last week/last month)
 		- Who are the new followers?
 		- Who did stop following me?
 - GitHub repositories
 	- Store the details of all *public* GitHub repositories
 	- For each of the repositories:
+	  - Increase/decrease of followers (e.g. compared to yesterday/last week/last month)
 		- Who follows the repsitory?
 		- Who are the new followers (compared to the previous day)?
 		- Who stopped following a repository (compared to the previous day)? 
