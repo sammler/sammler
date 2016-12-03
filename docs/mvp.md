@@ -1,4 +1,4 @@
-# MVP of sammler
+# MVP of _sammler_
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ The following information should be fetched on a daily basis from GitHub
 		- Who stopped following a repository (compared to the previous day)? 
 - No admin interface, just having the services running.
 
-### Infastructure Requirements
+### Infrastructure Requirements
 
 - The entire infrastructure should be able to created locally by just a `docker-compose up`.
 - Follow the principles of a microservice architecture (lousely coupled services, etc.)
