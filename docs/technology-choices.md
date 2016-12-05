@@ -1,8 +1,9 @@
 <!-- Technology Choices -->
-From the beginning I have made some assumptions and technology choices. This is fine for now, but over time this might change:
+To start somewhere, some assumptions and technology choices have been made. But this might change over time.
 
 - Programming languages: JavaScript/TypeScript, GoLang
-- UI framework: AngularJS 2.0
+- Storage: MongoDB
+- UI framework: vue.js
 - Containerization: Docker
 
 All other decisions will be documented over time.
