@@ -32,7 +32,7 @@ The following information should be fetched on a daily basis from GitHub
 ### Infrastructure Requirements
 
 - The entire infrastructure should be able to created locally by just a `docker-compose up`.
-- Follow the principles of a microservice architecture (lousely coupled services, etc.)
+- Follow the principles of a microservices architecture (lousily coupled services, etc.)
 - Deployment to DigitalOcean should be done with only a few lines of code.
 - Using a message bus from the beginning.
 - Orchestrate the services as automated as possible from the beginning.
@@ -48,8 +48,8 @@ Some implementation details so far:
 
 - As I have chosen PostgreSql for the first service, I had to create a REST wrapper for flywaydb.org to migrate new versions of the data-structure fully automated.
 - Chosen RabbitMq as a message bus.
-- To schedule the sync work, scheduled messages need to be sent to RabbitMQ, create a very rudimentatory node.js service doing that.
-- Started to use consule to orchestrate the services.
+- To schedule the sync work, scheduled messages need to be sent to RabbitMQ, create a very rudimentary node.js service doing that.
+- Started to use consul to orchestrate the services.
 
 
 ## Isn't that all overkill?
