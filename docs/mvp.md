@@ -12,7 +12,7 @@ The first MVP of *sammler* is defined as follows:
 
 ### Functionality
 
-The following information should be fetched on a daily basis from GitHub
+The following information should be fetched on a daily basis **from GitHub**
 
 - GitHub profile
 	- Who and how many followers do I have on my GitHub profile?
@@ -24,10 +24,11 @@ The following information should be fetched on a daily basis from GitHub
 	- Store the details of all *public* GitHub repositories
 	- For each of the repositories:
 	  - Increase/decrease of followers (e.g. compared to yesterday/last week/last month)
-		- Who follows the repsitory?
+		- Who follows the repository?
 		- Who are the new followers (compared to the previous day)?
 		- Who stopped following a repository (compared to the previous day)? 
-- No admin interface, just having the services running.
+
+
 
 ### Infrastructure Requirements
 
@@ -42,7 +43,7 @@ The following information should be fetched on a daily basis from GitHub
 
 ## Implementation Details
 
-I had to build/create a few building blocks so far to get the first MVP up and running, more will be necessary.
+A few building blocks will have to be created to get to the MVP:
 
 Some implementation details so far:
 
