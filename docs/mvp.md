@@ -41,6 +41,8 @@ The following information should be fetched on a daily basis **from GitHub**
 - Fully configurable.
 - New versions of a services should be deployable with zero manual efforts.
 
+
+
 ## Implementation Details
 
 A few building blocks will have to be created to get to the MVP:
@@ -51,6 +53,8 @@ Some implementation details so far:
 - Chosen RabbitMq as a message bus.
 - To schedule the sync work, scheduled messages need to be sent to RabbitMQ, create a very rudimentary node.js service doing that.
 - Started to use consul to orchestrate the services.
+
+See [Checkpoint #1](mvp-cp-1.md)
 
 
 ## Isn't that all overkill?
