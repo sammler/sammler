@@ -1,23 +1,23 @@
 version: '2'
 services:
 
-  s5r-consul:
-    container_name: 's5r-consul'
-    image: progrium/consul:latest
-    command: -server -bootstrap -ui-dir /ui
-    restart: always
-    mem_limit: 128m
-    ports:
-      - 8500:8500
-    expose:
-      - 53
-      - 8300
-      - 8301
-      - 8302
-      - 8400
-      - 8500
-    dns:
-      - 127.0.0.1
+#  s5r-consul:
+#    container_name: 's5r-consul'
+#    image: progrium/consul:latest
+#    command: -server -bootstrap -ui-dir /ui
+#    restart: always
+#    mem_limit: 128m
+#    ports:
+#      - 8500:8500
+#    expose:
+#      - 53
+#      - 8300
+#      - 8301
+#      - 8302
+#      - 8400
+#      - 8500
+#    dns:
+#      - 127.0.0.1
 
   s5r-rabbitmq:
     container_name: 's5r-rabbitmq'
