@@ -17,3 +17,5 @@ The ultimate goal would be:
 There is also another reason for _sammler_:
 As I am constantly testing new architectural and technical approaches, I just need a playground to test and validate technologies.
 The entire setup of _sammler_ is also my reference implementation of a microservices based architecture, using some of the cutting edge solutions out there.
+
+Finally, don't take the entire project too seriously, read here why: [It's the future](https://circleci.com/blog/its-the-future/)
