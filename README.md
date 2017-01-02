@@ -1,5 +1,5 @@
 # sammler
-> Let's get some insights. And it's fine to be a data junky.
+> Let's get some insights. And it's fine to be a data junkie.
 
 - [Why](#why)
 - [MVP](#mvp)
