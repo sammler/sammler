@@ -64,13 +64,17 @@ Some opinionated assumptions and technology choices have been made. But this mig
 All other decisions will be documented over time.
 
 ## FAQ
-### What does sammler mean?
+### What does _sammler_ mean?
 
-_Sammler_ is the german word for collector, gatherer, assembler or collecting agent.
+_sammler_ is the german word for collector, gatherer, assembler or collecting agent.
 
 ### How is the name written?
 
 _sammler_, not Sammler. 
+
+### What's _s5r_ ?
+
+_s5r_ is just the abbreviation for sammler, just being lazy and because it looks cool and unique ;-)
 
 ## Contributing
 Primarily I do - especially at the beginning and in the next months - not expect any contributions, and that's fine.  
