@@ -6,8 +6,6 @@
 - [Guiding Principles](#guiding-principles)
 - [Technology Choices](#technology-choices)
 - [FAQ](#faq)
-- [What does sammler mean?](#what-does-sammler-mean)
-- [How is the name written?](#how-is-the-name-written)
 - [Contributing](#contributing)
 - [Author](#author)
 - [License](#license)
@@ -66,11 +64,11 @@ Some opinionated assumptions and technology choices have been made. But this mig
 All other decisions will be documented over time.
 
 ## FAQ
-## What does sammler mean?
+### What does sammler mean?
 
 _Sammler_ is the german word for collector, gatherer, assembler or collecting agent.
 
-## How is the name written?
+### How is the name written?
 
 _sammler_, not Sammler. 
 
