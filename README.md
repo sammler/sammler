@@ -30,7 +30,8 @@ The ultimate goal of this project:
 - Create a pluggable system, so that it can be easily extended.
 - Be able to have access and analyze the full history in all areas.
 
-**But, wait ...**
+### But, wait ...  
+
 There is also another reason for _sammler_:
 As I am constantly testing new architectural and technical approaches, I just need a playground to test and validate technologies in general and in particular cloud related solutions.
 The entire setup of _sammler_ is also my reference implementation of a microservices based architecture, using some of the cutting edge solutions out there.
