@@ -3,7 +3,7 @@
 
 - [Why](#why)
 - [MVP](#mvp)
-- [Principles](#principles)
+- [Guiding Principles](#guiding-principles)
 - [Technology Choices](#technology-choices)
 - [FAQ](#faq)
 - [What does sammler mean?](#what-does-sammler-mean)
@@ -41,26 +41,26 @@ Finally, don't take the entire project [too seriously](https://circleci.com/blog
 ## MVP
 You might be interested in the first definition of the [MVP](docs/mvp.md) of _sammler_.
 
-## Principles
+## Guiding Principles
 <!-- Principles -->
 - Everything is Open Sourced.
 - Follow a Readme Driven Development.
     - Publish everything: my progress, failure, thoughts, decisions.  
     (Will be fun in a year from now to especially read all the silly decisions ;-))
-- Use as much existing solutions as possible, focus on assembling.
+- Use as much existing solutions as possible, focus on assembling, rather than writing new code.
 - All activities should be continuously tested and deployed to the cloud.
 - The entire solution needs to multi-tenant enabled.
 - Embrace the concept of microservices.
-- Don't introduce any dependencies on Cloud providers such as Amazon.
+- Don't introduce any dependencies on cloud providers such as Amazon, Azure, etc.
 - Automate, automate, automate.
 
 ## Technology Choices
 <!-- Technology Choices -->
-To start somewhere, some assumptions and technology choices have been made. But this might change over time.
+Some opinionated assumptions and technology choices have been made. But this might change over time.
 
 - Programming languages: JavaScript/TypeScript, GoLang
-- Storage: MongoDB
-- UI framework: vue.js
+- Storage: MongoDB, PostgreSql
+- UI framework: Angular
 - Containerization: Docker
 
 All other decisions will be documented over time.
@@ -75,11 +75,15 @@ _Sammler_ is the german word for collector, gatherer, assembler or collecting ag
 _sammler_, not Sammler. 
 
 ## Contributing
-Primarily I do - especially at the beginning and in the next months - not expect any participation.
+Primarily I do - especially at the beginning and in the next months - not expect any contributions, and that's fine.  
 I might pretty slowly progress on this project, as this is just a private project, only working on it in my free time.
 
-But stop: You might have similar requirements and interest, so please do not hesitate to [drop me a line](https://github.com/sammler/sammler/issues) and add your thoughts.
+But stop: You might have similar requirements and interest, so please do not hesitate to [drop me a line](https://github.com/sammler/sammler/issues) and add your thoughts.  
+Even if you do not want to actively participate, I am very interested in listening to your opinion and your related requirements.  
+
 Certainly any contribution is highly appreciated and will for sure encourage me to even work harder on this project.
+
+Let's see, keep fingers crossed, I am curious, too, where this project finally ends up.
 
 ## Author
 **Stefan Walther**
