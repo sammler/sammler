@@ -1,6 +1,22 @@
 version: '2'
 services:
 
+
+  # Base Services
+  s5r-mongo:
+    extends:
+      file: ./node_modules/sammler-base/docker-compose.yml
+      service: s5r-mongo
+
+  s5r-rabbitmq:
+    container_name: 's5r-rabbitmq'
+    image: rabbitmq:3.6.6-management
+    ports:
+      - "8080:15672"
+      - "5672:5672"
+
+  # Infastructure services
+
 #  s5r-consul:
 #    container_name: 's5r-consul'
 #    image: progrium/consul:latest
@@ -19,45 +35,32 @@ services:
 #    dns:
 #      - 127.0.0.1
 
-  s5r-rabbitmq:
-    container_name: 's5r-rabbitmq'
-    image: rabbitmq:3.6.6-management
-    ports:
-      - "8080:15672"
-      - "5672:5672"
-
+  # Sammler services
   s5r-scheduler:
-    container_name: 's5r-scheduler'
-    image: stefanwalther/sammler-scheduler:master
+    build:
+      context: ./node_modules/sammler-scheduler
     environment:
-      - SAMMLER_RABBITMQ_URL=amqp://guest:guest@s5r-rabbitmq:5672
-    links:
-      - s5r-rabbitmq
-
-  # Middleware GitHub
-  s5r-middleware-github-db:
-    container_name: 's5r-middleware-github-db'
-    image: postgres:9.6
-    ports:
-      - 5432
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PWD=postgres
-      - POSTGRES_DB=sammler-github
+      - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
+      - SAMMLER_JOBS_SERVICE_URI=http://s5r-jobs-service:3003
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  s5r-middleware-github:
-    container_name: 's5r-middleware-github'
-    image: stefanwalther/sammler-middleware-github:latest
-    environment:
-      - SAMMLER_MIDDLEWARE_GITHUB_PORT=3001
+      - ./node_modules/sammler-scheduler/:/home
     links:
-      - s5r-middleware-github-db
       - s5r-rabbitmq
+      - s5r-mongo
+    command: yarn run start:dev
 
-  # Middleware LinkedIn
+  s5r-jobs-service:
+   build:
+     context: ./node_modules/sammler-jobs-service
+   environment:
+     - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
+     - WAIT_START_CMD=yarn run start:dev
+     - WAIT_SLEEP=2
+     - WAIT_LOOPS=20
+     - PORT=3003
+     - SAMMLER_DB_JOBS_URI=mongodb://s5r-mongo:27017/jobs
+   volumes:
+     - ./node_modules/sammler-jobs-service/:/home
+   links:     - s5r-mongo
+   command: sh wait_to_start.sh
 
-
-volumes:
-  postgres_data:

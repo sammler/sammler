@@ -22,6 +22,8 @@
   "scripts": {
     "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
     "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
+    "dc-down": "docker-compose --f=./docker-compose.yml down",
+    "dc-up": "docker-compose --f=./docker-compose.yml up --build",
     "docs": "verb"
   },
   "dependencies": {},
