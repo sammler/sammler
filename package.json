@@ -1,6 +1,6 @@
 {
   "name": "sammler",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Let's get some insights. And it's fine to be a data junkie.",
   "keywords": [
     "github",
@@ -20,12 +20,19 @@
     "url": "git@github.com:sammler/sammler.git"
   },
   "scripts": {
-    "docs": "verb",
-    "dc-dev-up": "docker-compose -f=docker-compose.dev.yml up --build",
-    "dc-dev-down": "docker-compose -f=docker-compose.dev.yml down"
+    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
+    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
+    "docs": "verb"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "sammler-base": "sammler/sammler-base",
+    "sammler-jobs-service": "sammler/sammler-jobs-service",
+    "sammler-log-service": "sammler/sammler-log-service"
+  },
+  "engines": {
+    "node": ">=7.0"
+  },
   "verb": {
     "run": true,
     "toc": {
