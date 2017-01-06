@@ -9,11 +9,9 @@ services:
       service: s5r-mongo
 
   s5r-rabbitmq:
-    container_name: 's5r-rabbitmq'
-    image: rabbitmq:3.6.6-management
-    ports:
-      - "8080:15672"
-      - "5672:5672"
+    extends:
+      file: ./node_modules/sammler-base/docker-compose.yml
+      service: s5r-rabbitmq
 
   # Infastructure services
 
