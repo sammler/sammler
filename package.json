@@ -2,17 +2,17 @@
   "name": "sammler",
   "version": "0.2.2",
   "description": "Let's get some insights. And it's fine to be a data junkie.",
+  "keywords": [
+    "github",
+    "linkedin",
+    "microservices",
+    "sammler",
+    "twitter"
+  ],
   "homepage": "https://github.com/sammler/sammler#readme",
   "bugs": {
     "url": "https://github.com/sammler/sammler/issues"
   },
-  "keywords": [
-    "sammler",
-    "microservices",
-    "github",
-    "twitter",
-    "linkedin"
-  ],
   "license": "MIT",
   "author": "Stefan Walther",
   "repository": {
@@ -20,11 +20,11 @@
     "url": "git@github.com:sammler/sammler.git"
   },
   "scripts": {
-    "docs": "verb"
+    "docs": "verb",
+    "dc-dev-up": "docker-compose -f=docker-compose.dev.yml up --build",
+    "dc-dev-down": "docker-compose -f=docker-compose.dev.yml down"
   },
-  "dependencies": {
-    "sammler-middleware-github": "0.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "verb": {
     "run": true,
