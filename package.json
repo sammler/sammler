@@ -30,7 +30,8 @@
   "devDependencies": {
     "sammler-base": "sammler/sammler-base",
     "sammler-jobs-service": "sammler/sammler-jobs-service",
-    "sammler-log-service": "sammler/sammler-log-service"
+    "sammler-log-service": "sammler/sammler-log-service",
+    "sammler-strategy-github": "sammler/sammler-strategy-github"
   },
   "engines": {
     "node": ">=7.0"

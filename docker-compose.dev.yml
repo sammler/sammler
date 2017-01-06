@@ -46,7 +46,7 @@ services:
       - s5r-rabbitmq
       - s5r-mongo
     command: yarn run start:dev
-
+ya
   s5r-jobs-service:
    build:
      context: ./node_modules/sammler-jobs-service
@@ -58,7 +58,8 @@ services:
      - PORT=3003
      - SAMMLER_DB_JOBS_URI=mongodb://s5r-mongo:27017/jobs
    volumes:
-     - ./node_modules/sammler-jobs-service/:/home
-   links:     - s5r-mongo
+      - ./node_modules/sammler-jobs-service/:/home
+   links:
+      - s5r-mongo
    command: sh wait_to_start.sh
 
