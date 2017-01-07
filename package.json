@@ -31,6 +31,7 @@
     "sammler-base": "sammler/sammler-base",
     "sammler-jobs-service": "sammler/sammler-jobs-service",
     "sammler-log-service": "sammler/sammler-log-service",
+    "sammler-scheduler-service": "sammler/sammler-scheduler-service",
     "sammler-strategy-github": "sammler/sammler-strategy-github"
   },
   "engines": {

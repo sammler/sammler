@@ -1,7 +1,9 @@
 version: '2'
 services:
 
+  # --------------------------------------------------------------------------------------------------------------------
   # Base Services
+  # --------------------------------------------------------------------------------------------------------------------
   s5r-mongo:
     extends:
       file: ./node_modules/sammler-base/docker-compose.yml
@@ -32,29 +34,34 @@ services:
 #    dns:
 #      - 127.0.0.1
 
-  # Sammler services
-  s5r-scheduler:
+  # --------------------------------------------------------------------------------------------------------------------
+  # sammler services
+  # --------------------------------------------------------------------------------------------------------------------
+  s5r-scheduler-service:
     build:
-      context: ./node_modules/sammler-scheduler
+      context: ./node_modules/sammler-scheduler-service
     environment:
+      - PORT=3002
       - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
       - SAMMLER_JOBS_SERVICE_URI=http://s5r-jobs-service:3003
+      - SAMMLER_LOG_SERVICE_URI=http://s5r-log-service:3004
     volumes:
-      - ./node_modules/sammler-scheduler/:/home
+      - ./node_modules/sammler-scheduler-service/:/home
     links:
       - s5r-rabbitmq
       - s5r-mongo
     command: yarn run start:dev
 
+
   s5r-jobs-service:
     build:
       context: ./node_modules/sammler-jobs-service
     environment:
+      - PORT=3003
       - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
       - WAIT_START_CMD=yarn run start:dev
       - WAIT_SLEEP=2
       - WAIT_LOOPS=20
-      - PORT=3003
       - SAMMLER_DB_JOBS_URI=mongodb://s5r-mongo:27017/jobs
     volumes:
       - ./node_modules/sammler-jobs-service/:/home
@@ -62,19 +69,36 @@ services:
       - s5r-mongo
     command: sh wait_to_start.sh
 
-  s5r-strategy-github:
+  s5r-log-service:
     build:
-      context: ./node_modules/sammler-strategy-github
+      context: ./node_modules/sammler-log-service
     environment:
+      - PORT=3004
       - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
       - WAIT_START_CMD=yarn run start:dev
       - WAIT_SLEEP=2
       - WAIT_LOOPS=20
+      - SAMMLER_DB_URI_LOGS=mongodb://s5r-mongo:27017/logs
+    volumes:
+      - ./node_modules/sammler-log-service/:/home
     links:
       - s5r-mongo
-      - s5r-rabbitmq
-      - s5r-scheduler
-      - s5r-jobs-service
-#      - s5r-log-service
     command: sh wait_to_start.sh
+
+
+#  s5r-strategy-github:
+#    build:
+#      context: ./node_modules/sammler-strategy-github
+#    environment:
+#      - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
+#      - WAIT_START_CMD=yarn run start:dev
+#      - WAIT_SLEEP=2
+#      - WAIT_LOOPS=20
+#    links:
+#      - s5r-mongo
+#      - s5r-rabbitmq
+#      - s5r-scheduler-service
+#      - s5r-jobs-service
+##      - s5r-log-service
+#    command: sh wait_to_start.sh
 
