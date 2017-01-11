@@ -20,7 +20,7 @@
     "url": "git@github.com:sammler/sammler.git"
   },
   "scripts": {
-    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
+    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml --e down",
     "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
     "dc-down": "docker-compose --f=./docker-compose.yml down",
     "dc-up": "docker-compose --f=./docker-compose.yml up --build",
@@ -35,7 +35,7 @@
     "sammler-strategy-github": "sammler/sammler-strategy-github"
   },
   "engines": {
-    "node": ">=7.0"
+    "node": ">=7.2"
   },
   "verb": {
     "run": true,

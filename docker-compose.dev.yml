@@ -85,20 +85,24 @@ services:
       - s5r-mongo
     command: sh wait_to_start.sh
 
-
-#  s5r-strategy-github:
-#    build:
-#      context: ./node_modules/sammler-strategy-github
-#    environment:
-#      - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
-#      - WAIT_START_CMD=yarn run start:dev
-#      - WAIT_SLEEP=2
-#      - WAIT_LOOPS=20
-#    links:
-#      - s5r-mongo
-#      - s5r-rabbitmq
-#      - s5r-scheduler-service
-#      - s5r-jobs-service
-##      - s5r-log-service
-#    command: sh wait_to_start.sh
+  s5r-strategy-github:
+    build:
+      context: ./node_modules/sammler-strategy-github
+    environment:
+      - PORT=3100
+      - SAMMLER_STRATEGY_GITHUB_DB_URI=mongodb://s5r-mongo:27017/github
+      - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
+      - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
+      - WAIT_START_CMD=yarn run start:dev
+      - WAIT_SLEEP=2
+      - WAIT_LOOPS=20
+    volumes:
+          - ./node_modules/sammler-strategy-github/:/home
+    links:
+      - s5r-mongo
+      - s5r-rabbitmq
+      - s5r-scheduler-service
+      - s5r-jobs-service
+      - s5r-log-service
+    command: sh wait_to_start.sh
 
