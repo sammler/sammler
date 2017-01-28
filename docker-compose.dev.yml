@@ -10,20 +10,20 @@ services:
       service: portainer
 
 
-  elasticsearch:
-    extends:
-      file: ./node_modules/sammler-base/docker-compose.yml
-      service: elasticsearch
-
-  logstash:
-    extends:
-      file: ./node_modules/sammler-base/docker-compose.yml
-      service: logstash
-
-  kibana:
-    extends:
-      file: ./node_modules/sammler-base/docker-compose.yml
-      service: kibana
+#  elasticsearch:
+#    extends:
+#      file: ./node_modules/sammler-base/docker-compose.yml
+#      service: elasticsearch
+#
+#  logstash:
+#    extends:
+#      file: ./node_modules/sammler-base/docker-compose.yml
+#      service: logstash
+#
+#  kibana:
+#    extends:
+#      file: ./node_modules/sammler-base/docker-compose.yml
+#      service: kibana
 
 
   # --------------------------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ services:
 
   # Monitoring
 
-  # ----------------------  ----------------------------------------------------------------------------------------------
+  # --------------------------------------------------------------------------------------------------------------------
   # sammler services
   # --------------------------------------------------------------------------------------------------------------------
   s5r-scheduler-service:
@@ -79,6 +79,10 @@ services:
       - s5r-rabbitmq
       - s5r-mongo
     command: yarn run start:dev
+#    log_driver: "gelf"
+#    log_opt:
+#      gelf-address: "udp://169.254.255.254:12201"
+#      labels: "com.docker.compose.service"
 
 
   s5r-jobs-service:
@@ -140,4 +144,9 @@ services:
       - s5r-jobs-service
       - s5r-log-service
     command: sh wait_to_start.sh
+
+    # --------------------------------------------------------------------------------------------------------------------
+    # UI
+    # --------------------------------------------------------------------------------------------------------------------
+
 
