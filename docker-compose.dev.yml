@@ -68,6 +68,8 @@ services:
     links:
       - s5r-mongo
     command: sh wait_to_start.sh
+    ports:
+      - 3003:3003
 
   s5r-log-service:
     build:
@@ -84,12 +86,16 @@ services:
     links:
       - s5r-mongo
     command: sh wait_to_start.sh
+    ports:
+      - 3004:3004
 
   s5r-strategy-github:
     build:
       context: ./node_modules/sammler-strategy-github
     environment:
       - PORT=3100
+      - S5R_STRATEGY_GITHUB__TOKEN=$S5R_STRATEGY_GITHUB__TOKEN
+      - SAMMLER_JOBS_SERVICE__URI=http://s5r-jobs-service:3003
       - SAMMLER_STRATEGY_GITHUB_DB_URI=mongodb://s5r-mongo:27017/github
       - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
       - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
