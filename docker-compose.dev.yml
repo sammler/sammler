@@ -2,6 +2,31 @@ version: '2'
 services:
 
   # --------------------------------------------------------------------------------------------------------------------
+  # Infrastructure services
+  # --------------------------------------------------------------------------------------------------------------------
+  portainer:
+    extends:
+      file: ./node_modules/sammler-base/docker-compose.yml
+      service: portainer
+
+
+  elasticsearch:
+    extends:
+      file: ./node_modules/sammler-base/docker-compose.yml
+      service: elasticsearch
+
+  logstash:
+    extends:
+      file: ./node_modules/sammler-base/docker-compose.yml
+      service: logstash
+
+  kibana:
+    extends:
+      file: ./node_modules/sammler-base/docker-compose.yml
+      service: kibana
+
+
+  # --------------------------------------------------------------------------------------------------------------------
   # Base Services
   # --------------------------------------------------------------------------------------------------------------------
   s5r-mongo:
@@ -34,12 +59,15 @@ services:
 #    dns:
 #      - 127.0.0.1
 
-  # --------------------------------------------------------------------------------------------------------------------
+  # Monitoring
+
+  # ----------------------  ----------------------------------------------------------------------------------------------
   # sammler services
   # --------------------------------------------------------------------------------------------------------------------
   s5r-scheduler-service:
     build:
       context: ./node_modules/sammler-scheduler-service
+    container_name: scheduler-service
     environment:
       - PORT=3002
       - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
@@ -76,6 +104,7 @@ services:
       context: ./node_modules/sammler-log-service
     environment:
       - PORT=3004
+      - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
       - WAIT_COMMAND=[ $$(curl --write-out %{http_code} --silent --output /dev/null http://s5r-mongo:27017) = 200 ]
       - WAIT_START_CMD=yarn run start:dev
       - WAIT_SLEEP=2
