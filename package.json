@@ -1,6 +1,6 @@
 {
   "name": "sammler",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Let's get some insights. And it's fine to be a data junkie.",
   "keywords": [
     "github",
@@ -20,22 +20,21 @@
     "url": "git@github.com:sammler/sammler.git"
   },
   "scripts": {
-    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
-    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
+    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down --remove-orphans",
+    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build --force-recreate",
     "dc-down": "docker-compose --f=./docker-compose.yml down",
     "dc-up": "docker-compose --f=./docker-compose.yml up --build",
     "docs": "verb"
   },
   "dependencies": {},
   "devDependencies": {
-    "sammler-base": "sammler/sammler-base",
-    "sammler-jobs-service": "sammler/sammler-jobs-service",
+    "sammler-base": "^0.0.8",
     "sammler-log-service": "sammler/sammler-log-service",
     "sammler-scheduler-service": "sammler/sammler-scheduler-service",
-    "sammler-strategy-github": "sammler/sammler-strategy-github"
+    "sammler-strategy-github": "^0.0.11"
   },
   "engines": {
-    "node": ">=7.2"
+    "node": ">=7.2.0"
   },
   "verb": {
     "run": true,

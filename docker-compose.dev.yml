@@ -8,23 +8,8 @@ services:
     extends:
       file: ./node_modules/sammler-base/docker-compose.yml
       service: portainer
-
-
-#  elasticsearch:
-#    extends:
-#      file: ./node_modules/sammler-base/docker-compose.yml
-#      service: elasticsearch
-#
-#  logstash:
-#    extends:
-#      file: ./node_modules/sammler-base/docker-compose.yml
-#      service: logstash
-#
-#  kibana:
-#    extends:
-#      file: ./node_modules/sammler-base/docker-compose.yml
-#      service: kibana
-
+    ports:
+      - 9000:9000
 
   # --------------------------------------------------------------------------------------------------------------------
   # Base Services
@@ -68,6 +53,7 @@ services:
     build:
       context: ./node_modules/sammler-scheduler-service
     container_name: scheduler-service
+    restart: always
     environment:
       - PORT=3002
       - SAMMLER_RABBITMQ_URI=amqp://guest:guest@s5r-rabbitmq:5672
