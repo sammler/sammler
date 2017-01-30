@@ -845,9 +845,9 @@ resolve-from@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
 
-sammler-base@^0.0.8:
+sammler-base@sammler/sammler-base:
   version "0.0.8"
-  resolved "https://registry.yarnpkg.com/sammler-base/-/sammler-base-0.0.8.tgz#ddcd8212a827ed38fac50ad28ef252a8545bec7e"
+  resolved "https://codeload.github.com/sammler/sammler-base/tar.gz/c016816ff2ef64c6146a7db044e368c51b2c71a9"
 
 sammler-jobs-service@sammler/sammler-jobs-service:
   version "0.0.4"
@@ -896,9 +896,9 @@ sammler-scheduler-service@sammler/sammler-scheduler-service:
     superagent "^3.3.1"
     superagent-promise "^1.1.0"
 
-sammler-strategy-github@^0.0.11:
+sammler-strategy-github@sammler/sammler-strategy-github:
   version "0.0.11"
-  resolved "https://registry.yarnpkg.com/sammler-strategy-github/-/sammler-strategy-github-0.0.11.tgz#fd2d3f16d79ced8a12291af506845cd8e849f180"
+  resolved "https://codeload.github.com/sammler/sammler-strategy-github/tar.gz/1ea61e3797e5dfc6692d46dfc0b86d7e8638f415"
   dependencies:
     amqp-as-promised "^4.1.0"
     amqplib "^0.5.1"

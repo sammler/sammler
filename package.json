@@ -1,6 +1,6 @@
 {
   "name": "sammler",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Let's get some insights. And it's fine to be a data junkie.",
   "keywords": [
     "github",
@@ -28,10 +28,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "sammler-base": "^0.0.8",
+    "sammler-base": "sammler/sammler-base",
+    "sammler-jobs-service": "sammler/sammler-jobs-service",
     "sammler-log-service": "sammler/sammler-log-service",
     "sammler-scheduler-service": "sammler/sammler-scheduler-service",
-    "sammler-strategy-github": "^0.0.11"
+    "sammler-strategy-github": "sammler/sammler-strategy-github"
   },
   "engines": {
     "node": ">=7.2.0"
