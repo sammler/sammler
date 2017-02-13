@@ -2,6 +2,7 @@
 .cache
 .config
 .yarn
+.data
 
 # always ignore files
 *.DS_Store

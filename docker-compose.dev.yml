@@ -18,13 +18,15 @@ services:
     extends:
       file: ./node_modules/sammler-base/docker-compose.yml
       service: s5r-mongo
+    volumes:
+      - ./.data/s5r-mongo:/data/db
 
   s5r-rabbitmq:
     extends:
       file: ./node_modules/sammler-base/docker-compose.yml
       service: s5r-rabbitmq
 
-  # Infastructure services
+  # Infrastructure services
 
 #  s5r-consul:
 #    container_name: 's5r-consul'
