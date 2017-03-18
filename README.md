@@ -1,4 +1,6 @@
 # sammler
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sammler/sammler.svg)](https://greenkeeper.io/)
 > Let's get some insights. And it's fine to be a data junkie.
 
 - [Why](#why)
