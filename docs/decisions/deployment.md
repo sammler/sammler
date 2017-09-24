@@ -5,7 +5,7 @@
 - Separation between development & production environment
 - Fully idempotent system
 
-# Local deployment
+# Local development/deployment
 
 The goals of a local deployment:
 

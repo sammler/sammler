@@ -18,12 +18,11 @@ status: in-progress
     - `created_at`
     - `modified_at`
     - `created_by`
-    - `modified_by`
-- All change scripts are stored in each project, following the approach of https://flywaydb.org/
-    
+    - `modified_by`    
     
 ## References
-### Multi tenant architeture
+
+### Multi tenant architecture
 - [Multi-Tenant Data Architecture](https://msdn.microsoft.com/en-us/library/aa479086.aspx)
 
 ### Schema migration / management
@@ -35,4 +34,3 @@ status: in-progress
 ### Schema migration - tools
 
 - https://github.com/mbryzek/schema-evolution-manager
-- https://flywaydb.org/
