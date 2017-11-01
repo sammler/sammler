@@ -1,15 +1,19 @@
 
 ## Environment Variables
 
-- PORT - Defines the by default exposed port.
+- `PORT` - Defines the by default exposed port (defaults to a specific port as documented in the project).
+- `NODE_ENV` - For node.js services (defaults to `development`).
 
 ## Labels
+
+- `io.sammler.env` - Environment (used for logging purposes)
 
 ## Paths
 
 ### Installation Path
 
 - `/opt/<app-name>` - Location for custom apps
+- `/opt/<app-name>/config` - Custom configuration files (if needed)
 
 References:
 

@@ -24,7 +24,7 @@
     "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build --force-recreate",
     "dc-down": "docker-compose --f=./docker-compose.yml down",
     "dc-up": "docker-compose --f=./docker-compose.yml up --build",
-    "docs": "verb"
+    "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb"
   },
   "dependencies": {},
   "devDependencies": {

@@ -1,7 +1,0 @@
-### Base Services
-- SAMMLER_SCHEDULER_SERVICE - port 3002
-- SAMMLER_JOBS_SERVICE - port 3003
-- SAMMLER_LOG_SERVICE - port 3004
-
-### Strategies
-- SAMMLER_STRATEGY_GITHUB - port 3100
